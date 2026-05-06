@@ -1,0 +1,26 @@
+# 敏感配置（含账号密码）
+config.json
+
+# Session cookie
+session.json
+
+# 截图/验证码
+*.png
+captcha.png
+grab_error.png
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db

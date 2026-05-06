@@ -1,0 +1,18 @@
+{
+  "username": "你的学号",
+  "password": "你的密码",
+  "captcha_provider": "chaojiying",
+  "yunma_token": "你的云码token",
+  "cjy_user": "超级鹰用户名",
+  "cjy_pass": "超级鹰密码",
+  "cjy_soft_id": "超级鹰软件ID",
+  "venue_name": "综合体育馆",
+  "field_type": "羽毛球",
+  "target_courts": ["8", "11"],
+  "preferred_period": "2",
+  "booking_hour": 21,
+  "day_offset": 2,
+  "max_retries": 30,
+  "retry_interval": 0.3,
+  "timeout_seconds": 120
+}
