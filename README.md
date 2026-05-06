@@ -6,8 +6,8 @@
 
 - 🔐 自动 CAS 登录（支持验证码自动识别）
 - ⏰ 定时抢场，精确到秒
-- 🏸 多场地优先级策略（如：8号 → 11号 → 任意空场）
-- 🔄 同时抢两个时段，共享登录只需一次
+- 🏸 多场地优先级/降级策略（如：6号 → 9号 → 任意空场）
+- 🔄 同时抢多个时段，共享登录只需一次
 - 🍪 Cookie 复用，避免重复登录
 
 ## 原理
@@ -51,14 +51,14 @@ cp config.example.json config.json
 ### 单时段抢场
 
 ```bash
-# 抢 2026-05-08 的 15:00，优先8号场，备选11号
-python auto_book.py --court 8 --fallback-courts 11,any --time 15:00 --date 2026-05-08
+# 抢 2026-05-08 的 15:00，优先6号场，备选9号
+python auto_book.py --court 6 --fallback-courts 9,any --time 15:00 --date 2026-05-08
 
 # 指定准点抢（提前预热，21:00整开抢）
-python auto_book.py --court 8 --time 15:00 --date 2026-05-08 --book-at 21:00
+python auto_book.py --court 6 --time 15:00 --date 2026-05-08 --book-at 21:00
 
 # 复用已有 cookie（跳过登录）
-python auto_book.py --court 8 --time 15:00 --date 2026-05-08 --reuse-session
+python auto_book.py --court 6 --time 15:00 --date 2026-05-08 --reuse-session
 ```
 
 ### 双时段并行抢场
@@ -87,7 +87,7 @@ python book_both.py --book-at 21:00 --date 2026-05-08 --times 15:00,16:00
 
 - `config.json` 含个人账号信息，已在 `.gitignore` 中排除
 - Cookie 有效期约 8 天，可用 `--reuse-session` 复用
-- 验证码识别偶尔不准，脚本会自动重试（最多15次）
+- 验证码识别偶尔不准（取决于API服务是否稳定），脚本会自动重试（最多15次）
 
 ## License
 

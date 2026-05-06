@@ -8,7 +8,7 @@
   "cjy_soft_id": "超级鹰软件ID",
   "venue_name": "综合体育馆",
   "field_type": "羽毛球",
-  "target_courts": ["8", "11"],
+  "target_courts": ["6", "9"],
   "preferred_period": "2",
   "booking_hour": 21,
   "day_offset": 2,
