@@ -87,6 +87,15 @@ python auto_book.py --court 8 --time 15:00 --date 2026-05-08 --book-at 21:00
 55 20 * * * cd /path/to/hrbeu-badminton && python grab_smart.py --date $(date -d "+2 days" +\%Y-\%m-\%d) --book-at 21:00
 ```
 
+## 抢场耗时记录
+
+| 日期 | 版本 | 方案 | 耗时 | 说明 |
+|------|------|------|------|------|
+| 2026-05-06 | v1 | auto_book + book_both 双线程 | 7.5~9s | 8->11快速重试1.3s，超级鹰识别5-7s |
+| 2026-05-08 | v2 | grab_smart 单浏览器集中选择 | 5.14s | 扫描+多选+一次提交，无页面刷新 |
+
+> 耗时指从点击chose到跳转PayField的总时间（不含登录/预热）。
+
 ## 文件说明
 
 | 文件 | 说明 |
